@@ -1,0 +1,20 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+$hpe-fonts-path: "https://hpefonts.s3.amazonaws.com/web" !default;
+
+@font-face {
+  font-family: "Metric";
+  src: url("#{$hpe-fonts-path}/MetricHPE-Web-Regular.woff") format('woff');
+}
+
+@font-face {
+  font-family: "Metric";
+  src: url("#{$hpe-fonts-path}/MetricHPE-Web-Medium.woff") format('woff');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Metric";
+  src: url("#{$hpe-fonts-path}/MetricHPE-Web-Light.woff") format('woff');
+  font-weight: 100;
+}

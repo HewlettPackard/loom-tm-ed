@@ -1,0 +1,352 @@
+html,
+body {
+  height: 100%;
+  overflow-y: hidden;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+#content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+
+  *:focus {
+    outline: 0;
+  }
+}
+
+.container {
+  background-color: $color-white;
+
+  .main__inner {
+
+  }
+}
+
+.container--centre {
+  .main__inner {
+
+  }
+}
+
+.floating {
+  position: absolute;
+}
+
+.container--inverse {
+  background-color: $inverse-background-color;
+  color: $inverse-secondary-text-color;
+
+  p {
+    color: $inverse-text-color;
+  }
+
+  // Grommet Heading
+  .grommetux-heading {
+    color: $inverse-heading-text-color;
+  }
+
+  // Grommet Field
+  .grommetux-form-field__label {
+    color: $inverse-secondary-text-color;
+  }
+
+  // Grommet Checkbox
+  .grommetux-check-box__label {
+    color: $inverse-text-color;
+  }
+
+  // Grommet Values
+  .grommetux-value__value {
+    color: $inverse-text-color;
+  }
+
+
+  .grommetux-value__units,
+  .grommetux-meter__value-units {
+    color: $inverse-secondary-text-color;
+  }
+
+  // Links
+  &.grommet {
+    a {
+      &:not(.grommetux-anchor),
+      &:not(.grommetux-button) {
+        color: $inverse-secondary-text-color;
+
+        &.tab__link {
+          text-decoration: none;
+        }
+
+        &:hover,
+        &:active {
+          color: $inverse-text-color;
+        }
+      }
+    }
+
+    .tab__item--active {
+      a {
+        &:not(.grommetux-anchor),
+        &:not(.grommetux-button) {
+          &.tab__link {
+            color: $inverse-text-color;
+          }
+        }
+      }
+    }
+  }
+
+  // Fullscreen
+  .btn__fullscreen {
+    color: $inverse-text-color;
+    background-color: transparent;
+
+    svg {
+      vertical-align: middle;
+    }
+  }
+}
+
+// Custom Grommet color indexes
+.grommetux-color-index-state-1 {
+  stroke: $state-ok;
+}
+
+.grommetux-color-index-state-2 {
+  stroke: $state-warning;
+}
+
+.grommetux-color-index-state-3 {
+  stroke: $state-error;
+}
+
+// Box
+.grommetux-box--pad-medium {
+  padding: $spacing-height-m $spacing-width-m;
+}
+
+// Layer
+.grommet {
+  &.grommetux-layer {
+    // Usual specificity issues
+    .grommetux-layer__container {
+      padding: $spacing-height-xl $spacing-width-xl;
+    }
+  }
+}
+
+// Generic Un-Grommeting
+.grommet.grommetux-app {
+  input[type="button"],
+  input[type="submit"],
+  button:not(.grommetux-button) {
+    border: 0;
+    width: auto;
+    min-width: 0;
+    min-width: initial;
+
+    &:hover,
+    &:focus,
+    &:active {
+      border: 0;
+      box-shadow: none;
+    }
+  }
+}
+
+
+.grommetux-button:focus:not(.grommetux-button--disabled) {
+  box-shadow: none;
+}
+
+.header {
+  .grommetux-button:focus:not(.grommetux-button--disabled) {
+    border: initial;
+  }
+}
+
+.grommetux-button {
+  letter-spacing: initial;
+}
+
+.grommetux-button--fill {
+  flex-grow: initial;
+}
+
+// Grommet Meter/Value
+.grommetux-value {
+  display: block;
+}
+
+.grommetux-value__units,
+.grommetux-meter__value-units {
+  display: block;
+  width: 100%;
+  margin: -8px 0 0;
+  font-weight: 600;
+}
+
+.grommetux-value__units,
+.grommetux-meter__value-units {
+  font-size: $h3-font-size;
+}
+
+// Grommet chart
+.grommetux-chart {
+  &:hover {
+    cursor: pointer;
+  }
+
+  .grommetux-chart-base--height-small {
+    height: 15vh;
+  }
+
+  .grommetux-chart-marker,
+  .grommetux-chart-graph__point--active {
+    stroke-width: 3px;
+  }
+
+  .grommetux-chart-marker {
+    stroke: $color-white;
+  }
+
+  .grommetux-chart-marker-label {
+    margin: $spacing-height-xs $spacing-width-xs;
+  }
+
+  .grommetux-chart-graph__point--active {
+    fill: $inverse-secondary-background-color;
+  }
+
+  // @hack: Typically this is the best way in Grommet
+  .grommetux-chart-axis {
+    .grommetux-chart-axis__slot {
+      position: relative;
+
+      &::after {
+        background-color: $brand-light-2a;
+      }
+
+      span {
+        position: absolute;
+      }
+    }
+  }
+
+  .chart__axis--vertical {
+    margin-right: 0;
+    margin-left: 0;
+
+    @include breakpoint('large') {
+      margin-left: 0;
+      padding-right: 0;
+    }
+
+    .grommetux-chart-axis__slot {
+      span {
+        top: -12px;
+      }
+
+      &:first-child {
+        span {
+          top: auto;
+          bottom: -12px;
+        }
+      }
+    }
+  }
+
+  .chart__axis--horizontal {
+    margin-top: 5px;
+
+    // Fix issue where grommet styling doesn't work for <Axis tickAlign="end" />
+    &.grommetux-chart-axis--ticks--end {
+      justify-content: flex-end;
+    }
+
+    .grommetux-chart-axis__slot {
+      span {
+        top: 5px;
+      }
+    }
+  }
+
+  .grommetux-chart-grid {
+    path {
+      stroke: $brand-light-2a;
+    }
+  }
+
+  .grommetux-chart-hot-spots {
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+// Grommet Heading
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &.grommetux-heading--uppercase {
+    letter-spacing: 0;
+  }
+}
+
+// Grommet Form
+.grommetux-form {
+  max-width: 400px;
+}
+
+// Grommet Field
+.grommetux-form-field--focus {
+  border-color: $brand-turquoise;
+}
+
+.grommetux-form-field__label {
+  color: $secondary-text-color;
+}
+
+// Grommet Checkbox
+.grommetux-check-box {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+// Grommet Form
+.grommetux-form-field__contents {
+  > input[type="text"],
+  > input[type="password"] {
+    display: flex;
+    box-shadow: 0 0 0 1000px white inset;
+  }
+
+  > select {
+    background-repeat: no-repeat;
+  }
+}
+
+// Grommet Layer (drawer)
+.grommetux-layer {
+  li {
+    color: $color-grey-2;
+    font-weight: 100;
+  }
+}

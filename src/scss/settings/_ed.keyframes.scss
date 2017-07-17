@@ -1,0 +1,12 @@
+// Animation Keyframes
+
+// Flashing
+@keyframes flashing {
+  0% {
+    opacity: .8;
+  }
+
+  100% {
+    opacity: .2;
+  }
+}

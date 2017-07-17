@@ -1,0 +1,56 @@
+// Mixins
+
+@mixin vertical-align ($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin breakpoint ($size) {
+  @if $size == 'xsmall' {
+    @media (min-width: $bp-xsmall-min) and (max-width: $bp-xsmall-max) { @content; }
+  } @else if $size == 'small' {
+    @media (min-width: $bp-small-min) and (max-width: $bp-small-max) { @content; }
+  } @else if $size == 'medium' {
+    @media (min-width: $bp-medium-min) and (max-width: $bp-medium-max) { @content; }
+  } @else if $size == 'large' {
+    @media (min-width: $bp-large-min) and (max-width: $bp-large-max) { @content; }
+  } @else if $size == 'xlarge' {
+    @media (min-width: $bp-xlarge-min) { @content; }
+  } @else if $size == 'xsmall+' {
+    @media (min-width: $bp-xsmall-min) { @content; }
+  } @else if $size == 'small+' {
+    @media (min-width: $bp-small-min) { @content; }
+  } @else if $size == 'medium+' {
+    @media (min-width: $bp-medium-min) { @content; }
+  } @else if $size == 'large+' {
+    @media (min-width: $bp-large-min) { @content; }
+  } @else if $size == 'xlarge+' {
+    @media (min-width: $bp-xlarge-min) { @content; }
+  }
+}
+
+@mixin icon-size ($size: xsmall) {
+  @if $size == medium {
+    max-height: $icon-size-medium;
+    max-width: $icon-size-medium;
+  } @else if $size == large {
+    max-height: $icon-size-large;
+    max-width: $icon-size-large;
+  } @else if $size == small {
+    max-height: $icon-size-small;
+    max-width: $icon-size-small;
+  } @else {
+    max-height: $icon-size-xsmall;
+    max-width: $icon-size-xsmall;
+  }
+}
+
+// Animations
+@mixin flashing ($duration: .3s) {
+  animation: $duration 0s ease-in infinite alternate flashing;
+}
+
+@mixin spinning ($duration: .75s) {
+  animation: $duration 0s linear infinite spinning;
+}

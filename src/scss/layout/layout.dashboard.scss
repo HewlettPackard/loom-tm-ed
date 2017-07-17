@@ -1,0 +1,209 @@
+// Dashboard
+.dashboard {
+  .grommetux-heading {
+    width: 100%;
+    margin-bottom: $spacing-height-m;
+
+    @include breakpoint('xlarge') {
+      margin-bottom: $spacing-height-l;
+    }
+  }
+
+  .dashboard__usage,
+  .dashboard__details {
+    display: flex;
+    min-width: 230px;
+    max-width: 30vw;
+    width: 25vw;
+
+    @include breakpoint('large') {
+      min-width: 260px;
+    }
+
+    > * {
+      width: 100%;
+      margin-bottom: $spacing-height-s;
+    }
+  }
+
+  .dashboard__usage {
+    flex-flow: row wrap;
+    align-items: stretch;
+    min-width: 200px;
+
+    @include breakpoint('large') {
+      min-width: 260px;
+    }
+
+    .grommetux-meter {
+      margin-top: -5px;
+    }
+  }
+
+  .dashboard__details {
+    flex-flow: column nowrap;
+  }
+
+  .dashboard__usage-info,
+  .dashboard__details-info {
+    padding: $spacing-height-m $spacing-width-m;
+    background-color: $inverse-secondary-background-color;
+
+    .legend__heading {
+      margin-bottom: $spacing-height-s;
+    }
+
+    .legend {
+      margin-bottom: $spacing-height-m;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .dashboard__usage-info {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 33%;
+  }
+
+  .dashboard__details-info {
+    min-height: 12vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+
+    &:first-child {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+    }
+
+    &:last-child {
+      justify-content: center;
+    }
+  }
+
+  .dashboard__details-info--stretch {
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  .dashboard__tabs {
+    flex: 0 1 auto;
+    width: 100%;
+    background-color: $inverse-background-color;
+
+    .tab__link {
+      display: block;
+      padding: $spacing-height-m $spacing-width-m;
+      text-align: center;
+      font-size: $h5-font-size;
+      line-height: 1.333; // @todo: use var!
+
+      &:hover,
+      &:active {
+        color: $inverse-text-color;
+      }
+    }
+
+    .tab__item {
+      flex: 1 1 33%;
+    }
+
+    .tab__item--active {
+      .tab__link {
+        color: $inverse-text-color;
+        background-color: $inverse-secondary-background-color;
+      }
+    }
+  }
+
+  .dashboard__focus {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    margin: 0 $spacing-width-s;
+    padding: 0;
+    background-color: $inverse-secondary-background-color;
+  }
+
+  // OptionBox
+  .option-boxes {
+    display: flex;
+    margin: 0;
+
+    .option-box {
+      width: 50%;
+      margin: 0 $spacing-width-s;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Columns
+  .columns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .column {
+      flex: 1 1 auto;
+      margin-right: $spacing-width-m;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Page
+.focus {
+  position: relative;
+  flex: 1 0 auto;
+  width: 100%;
+  height: 90%;
+  padding: $spacing-height-m $spacing-width-m;
+
+  @include breakpoint('xlarge') {
+    padding: $spacing-height-l $spacing-width-l;
+  }
+
+  .focus__center,
+  .chart__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .focus__center {
+    align-items: center;
+  }
+
+  .chart__wrapper {
+    align-items: flex-end;
+  }
+
+  .chart__footer {
+    align-self: flex-end;
+    width: 100%;
+  }
+}
+

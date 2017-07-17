@@ -1,0 +1,137 @@
+{
+  "threads": [
+    {
+      "id": "0",
+      "itemType": "tm-instance",
+      "query": {
+        "inputs": [
+          "tm/instances"
+        ],
+        "operationPipeline": [
+          {
+            "operator": "/loom/loom/SORT_BY",
+            "parameters": {
+              "property": "fullyQualifiedName",
+              "order": "ASC"
+            }
+          }
+        ],
+        "includeExcludedItems": true
+      }
+    },
+    {
+      "id": "1",
+      "itemType": "tm-soc",
+      "query": {
+        "inputs": [
+          "tm/socs"
+        ],
+        "operationPipeline": [
+          {
+            "operator": "/loom/loom/SORT_BY",
+            "parameters": {
+              "property": "fullyQualifiedName",
+              "order": "ASC"
+            }
+          }
+        ],
+        "includeExcludedItems": true
+      }
+    },
+    {
+      "id": "2",
+      "itemType": "tm-memoryboard",
+      "query": {
+        "inputs": [
+          "tm/memoryboards"
+        ],
+        "operationPipeline": [
+          {
+            "operator": "/loom/loom/SORT_BY",
+            "parameters": {
+              "property": "fullyQualifiedName",
+              "order": "ASC"
+            }
+          }
+        ],
+        "includeExcludedItems": true
+      }
+    },
+    {
+      "id": "3",
+      "itemType": "tm-node",
+      "query": {
+        "inputs": [
+          "tm/nodes"
+        ],
+        "operationPipeline": [
+          {
+            "operator": "/loom/loom/SORT_BY",
+            "parameters": {
+              "property": "fullyQualifiedName",
+              "order": "ASC"
+            }
+          }
+        ],
+        "includeExcludedItems": true
+      }
+    },
+    {
+      "id": "4",
+      "itemType": "tm-enclosure",
+      "query": {
+        "inputs": [
+          "tm/enclosures"
+        ],
+        "operationPipeline": [
+          {
+            "operator": "/loom/loom/SORT_BY",
+            "parameters": {
+              "property": "fullyQualifiedName",
+              "order": "ASC"
+            }
+          }
+        ],
+        "includeExcludedItems": true
+      }
+    },
+    {
+      "id": "5",
+      "itemType": "tm-shelf",
+      "query": {
+        "inputs": [
+          "tm/shelfs"
+        ],
+        "operationPipeline": [
+          {
+            "operator": "/loom/loom/SORT_BY",
+            "parameters": {
+              "property": "fullyQualifiedName",
+              "order": "ASC"
+            }
+          }
+        ],
+        "includeExcludedItems": true
+      }
+    },
+    {
+      "id": "6",
+      "itemType": "tm-fabric_switch",
+      "query": {
+        "inputs": [
+          "tm/fabric_switchs"
+        ],
+        "operationPipeline": [
+          {
+            "operator": "/loom/loom/SORT_BY",
+            "parameters": {
+              "property": "fullyQualifiedName",
+              "order": "ASC"
+            }
+          }
+        ],
+        "includeExcludedItems": true
+      }
+    }
+  ]
+}

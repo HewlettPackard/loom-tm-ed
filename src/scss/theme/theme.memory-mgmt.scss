@@ -1,0 +1,18 @@
+.page__memory-mgmt {
+  .dashboard__details-info {
+    justify-content: center;
+  }
+
+  .meter__wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+  }
+
+  .focus__center {
+    .grommetux-heading {
+      align-self: flex-start;
+    }
+  }
+}

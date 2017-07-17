@@ -1,0 +1,194 @@
+.enclosures__declarative {
+
+  .enclosure {
+    margin-bottom: $spacing-height-m;
+
+    @include breakpoint('xlarge') {
+      margin-bottom: $spacing-height-l;
+    }
+  }
+
+  .enclosure__title {
+    @include breakpoint('large+') {
+      font-size: $h4-font-size;
+    }
+  }
+
+  .enclosure__items {
+    padding: $spacing-height-m $spacing-width-s;
+
+    @include breakpoint('large+') {
+      padding: $spacing-height-m $spacing-width-m;
+    }
+  }
+
+  .enclosure--warning {
+    border-color: $state-warning;
+
+    .enclosure__title {
+      background-color: $state-warning;
+    }
+  }
+
+  .enclosure--error {
+    border-color: $state-error;
+
+    .enclosure__title {
+      background-color: $state-error;
+    }
+  }
+
+  .enclosure--undesirable {
+    .enclosure__title {
+      @include flashing(.75s);
+    }
+  }
+
+  .enclosure__item {
+    flex: 1 1 auto;
+    margin: .01vw $spacing-width-s .01vw .01vw;
+    background-color: $brand-slate;
+
+    @include breakpoint('large+') {
+      margin-right: $spacing-width-m;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .enclosure__item-title {
+    margin: 0;
+    padding: 0 $spacing-width-xs;
+    text-align: center;
+    font-size: $paragraph-small-font-size;
+    font-weight: 600;
+    color: $color-white;
+    background-color: nth($brand-grey-colors, 4);
+
+    @include breakpoint('xlarge') {
+      font-size: $paragraph-font-size;
+    }
+
+    @include breakpoint('xlarge') {
+      padding: $spacing-width-xs;
+    }
+  }
+
+  .enclosure__item--ok {
+    // no-op
+  }
+
+  .enclosure__item--error,
+  .enclosure__item--warning {
+    margin: -.01 ($spacing-width-s - .01) -.01 -.01;
+    border-width: .01vw;
+    border-style: solid;
+
+    @include breakpoint('large+') {
+      margin-right: $spacing-width-m - .01;
+    }
+  }
+
+
+  .enclosure__item--warning {
+    border-color: $state-warning;
+
+    .enclosure__item-title {
+      background-color: $state-warning;
+    }
+  }
+
+  .enclosure__item--error {
+    border-color: $state-error;
+
+    .enclosure__item-title {
+      background-color: $state-error;
+    }
+  }
+
+  .enclosure__item--undesirable {
+    .enclosure__item-title {
+      @include flashing(.75s);
+    }
+  }
+
+  .enclosure__item-components {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-height-m $spacing-width-s;
+
+    @include breakpoint('xlarge') {
+      padding: $spacing-height-m $spacing-width-m;
+    }
+
+    > [class*='component'] {
+      @include icon-size(small);
+      display: block;
+      padding: 0;
+      line-height: 0;
+
+
+      @include breakpoint('large+') {
+        @include icon-size(medium);
+      }
+
+      @include breakpoint('xlarge') {
+        @include icon-size(large);
+      }
+    }
+
+    .component__soc,
+    .component--position-upper {
+      margin-bottom: $spacing-height-m;
+    }
+  }
+
+  .enclosure__switches {
+    flex-grow: 2;
+    min-width: 80px;
+    max-width: 250px;
+
+    .enclosure__item-title {
+      white-space: nowrap;
+    }
+
+    .enclosure__item-components {
+      flex-flow: row wrap;
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    .component__switch {
+      &:nth-child(1),
+      &:nth-child(3) {
+        margin-right: 10%;
+      }
+    }
+  }
+
+  .component--ok {
+    svg {
+      fill: $state-ok;
+    }
+  }
+
+  .component--warning {
+    svg {
+      fill: $state-warning;
+    }
+  }
+
+  .component--error {
+    svg {
+      fill: $state-error;
+    }
+  }
+
+  .component--undesirable {
+    @include flashing(.75s);
+  }
+}

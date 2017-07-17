@@ -1,0 +1,81 @@
+// Header
+.header {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  width: 100%;
+  padding: $spacing-height-s $spacing-width-m;
+
+  .grommetux-heading {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0;
+    margin-left: $spacing-width-l;
+  }
+
+  .header__brand {
+    align-self: flex-start;
+    min-width: 260px;
+  }
+
+  .header__app {
+    align-self: center;
+    text-align: center;
+  }
+
+  .header__title {
+    margin-right: $spacing-width-l;
+  }
+
+  .header__utility {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+  }
+
+  .header__icons {
+    .btn__fullscreen:not(.grommetux-button--disabled), // @hack: Battling Grommet's specificity
+    .btn__fullscreen:focus:not(.grommetux-button--disabled),
+    .link__logout {
+      display: inline-flex;
+      align-items: center;
+      width: auto;
+      min-width: initial;
+      padding: 0 $spacing-width-l;
+      border: 0;
+      border-left: 1px solid $brand-light-2a;
+      color: $inverse-text-color;
+      font-weight: 100;
+      line-height: 1;
+
+      &:last-child {
+        margin-right: -$spacing-width-l;
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .btn__text {
+      line-height: 1;
+    }
+
+    .grommetux-control-icon {
+      @include icon-size(small);
+
+      &.grommetux-control-icon-expand {
+        @include icon-size(xsmall);
+      }
+    }
+
+    .grommetux-button:hover {
+      .grommetux-control-icon {
+        fill: $color-white;
+        stroke: $color-white;
+        transition: none;
+      }
+    }
+  }
+}

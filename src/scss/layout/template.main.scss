@@ -1,0 +1,25 @@
+$header-height: 50px;
+
+.template__main {
+  padding-top: $header-height;
+
+  .header {
+    position: fixed;
+    top: 0;
+    height: $header-height;
+    background-color: $brand-color;
+  }
+
+  .main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: $spacing-height-s $spacing-width-s;
+    overflow: hidden;
+
+    aside {
+      overflow: hidden;
+    }
+  }
+}

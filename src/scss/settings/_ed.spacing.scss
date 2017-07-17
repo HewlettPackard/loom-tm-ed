@@ -1,0 +1,35 @@
+// (C) Copyright 2014-2016 Hewlett Packard Enterprise Development LP
+
+// Spacing
+$spacing-base-w: 1vw;
+$spacing-base-h: 1.375vh;
+
+/*@include breakpoint('large+') {
+  $spacing-base-w: .9vw !global;
+  $spacing-base-h: 1.6vh !global;
+}
+
+@include breakpoint('xlarge+') {
+  $spacing-base-w: 1vw !global;
+  $spacing-base-h: 2vh !global;
+}*/
+
+$spacing-width-xs: $spacing-base-w / 4;
+$spacing-height-xs: $spacing-base-h / 4;
+
+$spacing-width-s: $spacing-base-w / 2;
+$spacing-height-s: $spacing-base-h / 2;
+
+$spacing-width-m: $spacing-base-w;
+$spacing-height-m: $spacing-base-h;
+
+$spacing-width-l: $spacing-base-w * 1.5;
+$spacing-height-l: $spacing-base-h * 1.5;
+
+$spacing-width-xl: $spacing-base-w * 3;
+$spacing-height-xl: $spacing-base-h * 3;
+
+/*@include breakpoint('large+') {
+  $spacing-width-xs: 5px !global;
+  $spacing-height-xs: 5px !global;
+}*/

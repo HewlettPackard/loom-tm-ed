@@ -1,0 +1,38 @@
+.page__universal-memory {
+
+  .chart__wrapper {
+    padding-top: $spacing-height-m;
+  }
+
+  .focus__node-active {
+    width: 100%;
+    margin-top: -$spacing-height-m;
+    padding: 0 $spacing-width-m;
+    text-align: center;
+    align-self: flex-start;
+
+    .grommetux-heading {
+      //width: auto;
+      margin: 0;
+    }
+  }
+
+  .node-info__list {
+    .column {
+      width: 42.5%;
+    }
+
+    .grommetux-heading {
+      margin-bottom: 0;
+    }
+
+    .grommetux-paragraph {
+      margin-bottom: $spacing-height-s;
+      text-transform: capitalize;
+
+      &.case-literal {
+        text-transform: initial;
+      }
+    }
+  }
+}

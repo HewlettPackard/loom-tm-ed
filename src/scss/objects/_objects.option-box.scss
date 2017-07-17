@@ -1,0 +1,59 @@
+// Option box
+.option-box {
+  padding: 0;
+  background-color: $inverse-background-color;
+
+  .grommetux-check-box {
+    padding: $spacing-height-m $spacing-width-m;
+  }
+
+  .grommetux-check-box,
+  .grommetux-check-box:hover {
+    .grommetux-check-box__label {
+      color: $color-white;
+    }
+
+    .grommetux-check-box__control,
+    .grommetux-check-box__control:hover,
+    .grommetux-check-box__control:focus,
+    .grommetux-check-box__input:checked+.grommetux-check-box__control {
+      border-color: $color-white;
+    }
+
+    .grommetux-check-box__control-check {
+      stroke: $color-white;
+    }
+
+    .grommetux-check-box__input:focus+.grommetux-check-box__control {
+      box-shadow: none;
+    }
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.option-box--cpu {
+  .grommetux-check-box,
+  .grommetux-check-box:hover {
+    .grommetux-check-box__control,
+    .grommetux-check-box__control:hover,
+    .grommetux-check-box__control:focus,
+    .grommetux-check-box__input:checked+.grommetux-check-box__control {
+      border-color: $brand-color;
+    }
+
+    .grommetux-check-box__control-check {
+      stroke: $brand-color;
+    }
+  }
+}
+
+.option-box__label-description {
+  display: block;
+  padding: $spacing-height-s $inuit-base-spacing-unit * 1.5 $spacing-height-s;
+  font-size: $paragraph-small-font-size;
+  line-height: 1.25;
+  white-space: normal;
+}

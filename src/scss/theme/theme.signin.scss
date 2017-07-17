@@ -1,0 +1,24 @@
+.page__signin {
+  .grommetux-heading {
+    width: 300px;
+    margin: 0 auto;
+    font-size: 36px;
+    text-align: center;
+    color: $brand-color;
+  }
+
+  .login-form {
+    margin: $spacing-height-xl 0;
+  }
+
+  .login-form__submit {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .signin__footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}

@@ -1,0 +1,54 @@
+
+// @hack: Due to grommet's specificity, it is necessary to nest BEM style selectors :(
+.enclosures {
+  width: 100%;
+
+  .enclosure {
+    margin-bottom: $spacing-height-s;
+    border: 1px solid nth($brand-grey-colors, 4);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .enclosure__title {
+      margin: 0;
+      padding: $spacing-height-xs $spacing-width-s;
+      text-align: center;
+      font-weight: 600;
+      background-color: nth($brand-grey-colors, 4);
+    }
+
+
+    .enclosure__item-title {
+      margin: 0;
+    }
+  }
+}
+
+.enclosure__items {
+  display: flex;
+  justify-content: space-around;
+  padding: $spacing-height-xs $spacing-width-xs;
+
+  button {
+    &.node__btn {
+      padding: 0 $spacing-width-xs;
+      font-size: $label-font-size;
+      font-weight: 100;
+      color: $color-white;
+
+      &:hover,
+      &:active {
+        border: 0;
+        background-color: $brand-turquoise-alpha;
+      }
+
+      &.node__btn--active {
+        border: 0;
+        background-color: $brand-turquoise;
+        color: $text-color;
+      }
+    }
+  }
+}

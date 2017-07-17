@@ -1,0 +1,108 @@
+.chart-chord {
+  align-self: center;
+}
+
+.chart-chord__ribbon,
+.segment__arc-bg {
+  fill: $inverse-background-color;
+  transition: fill .2s ease-out;
+
+}
+
+.chart-chord__ribbons--active {
+  .chart-chord__ribbon {
+    fill: nth($brand-graph-colors, 1);
+  }
+}
+
+.segment {
+  cursor: pointer;
+}
+
+.segment__arc-text {
+  text {
+    fill: $inverse-text-color;
+    font-size: 11px;
+    font-weight: 600;
+
+    @include breakpoint('large+') {
+      font-size: $paragraph-small-font-size;
+    }
+
+    .chart-chord__segment--active & {
+      fill: $text-color;
+    }
+  }
+}
+
+.segment__arc-value {
+  fill: rgba(0, 0, 0, 0.2);
+  transition: fill .2s ease-out;
+}
+
+.segment {
+  &.chart-chord__segment--connected {
+    .segment__arc--layer-2 {
+      .segment__arc-value {
+        fill: rgba($color-white, .5);
+      }
+    }
+
+    .segment__arc--layer-3 {
+      .segment__arc-value {
+        fill: rgba($brand-color, .5);
+      }
+    }
+  }
+
+  &:hover,
+  &:active {
+    .segment__arc--layer-1 {
+      .segment__arc-bg {
+        fill: $brand-turquoise-alpha;
+      }
+    }
+
+    .segment__arc--layer-2 {
+      .segment__arc-value {
+        fill: rgba($color-white, .75);
+      }
+    }
+
+    .segment__arc--layer-3 {
+      .segment__arc-value {
+        fill: rgba($brand-color, .75);
+      }
+    }
+  }
+
+  &.chart-chord__segment--active {
+    .segment__arc--layer-1 {
+      .segment__arc-bg {
+        fill: $brand-turquoise;
+      }
+    }
+
+    .segment__arc--layer-2 {
+      .segment__arc-value {
+        fill: $color-white;
+      }
+    }
+
+    .segment__arc--layer-3 {
+      .segment__arc-value {
+        fill: $brand-color;
+      }
+    }
+  }
+}
+
+
+.segment-group__arc,
+.segment-group__arc-text-path {
+  fill: $inverse-secondary-text-color;
+}
+
+.segment-group__arc-endcap {
+  stroke: $inverse-secondary-text-color;
+}

@@ -1,0 +1,20 @@
+// Signin
+.page__signin {
+  .form__wrapper {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .login-form {
+    .grommetux-heading {
+      color: $color-black;
+    }
+  }
+
+  .signin__footer-logo {
+    img {
+      width: 160px;
+    }
+  }
+}

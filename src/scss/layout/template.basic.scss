@@ -1,0 +1,25 @@
+$header-height: 100px;
+
+.template__basic {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-height: $header-height;
+  }
+
+  .main {
+    width: 100%;
+    height: 100%;
+    padding-top: $header-height;
+  }
+
+  .main__inner {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+}
